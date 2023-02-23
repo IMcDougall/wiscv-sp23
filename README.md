@@ -42,5 +42,24 @@ TB Environment is located in ./tb directory. To run any testcase.
           REF Trace : Reference/Golden Trace from the testbench simulator. 
           DUT Trace : Trace Captured from the design using probes in tb/dut_probes.sv.
           
+ ERRORS : 
+         Apart from generating reference traces, TB does register file comparisons between TB register file and design register file on every architectural commit. If there are any errors in your design, these comparisons give "ERROR" messages in ${RUN_DIR}/${PROG}_run.log (Note these variables RUN_DIR, PROG are given as arguments to "make all" command as described above)
+         
+        Example ERROR Message :
+        
+        # @               14500 cycle_count =         10 ERROR : Reg values mismatch at index 5 ; Expected : 0, Actual : 1 current_pc : 18 old_pc : 14
+
+timestamp = 14500 units
+cycle_count = 10 (you can use timestamp and wiscv_tb.cycle_count variables to arrive at the failure point in timestamp)
+cycle_count is a free running 32 bit counter increments by 1 on every clock cycle posedge. 
+index = 5 (Register Index is 5 . That is x5 has incorrect value)
+Expected = 0 (Expected value of x5 as per TB simulator is 0)
+Actual = 1 (Observed value of x5 in DUT register is 1)
+current_pc = 18 (current pc of the instruction in write back stage : Yet to be committed)
+old_pc = 14 (PC value of instruction which got committed)
+
+
+ 
+         
  
              
