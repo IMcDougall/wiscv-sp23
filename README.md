@@ -49,16 +49,24 @@ TB Environment is located in ./tb directory. To run any testcase.
         
         # @               14500 cycle_count =         10 ERROR : Reg values mismatch at index 5 ; Expected : 0, Actual : 1 current_pc : 18 old_pc : 14
 
-timestamp = 14500 units
-cycle_count = 10 (you can use timestamp and wiscv_tb.cycle_count variables to arrive at the failure point in timestamp)
-cycle_count is a free running 32 bit counter increments by 1 on every clock cycle posedge. 
-index = 5 (Register Index is 5 . That is x5 has incorrect value)
-Expected = 0 (Expected value of x5 as per TB simulator is 0)
-Actual = 1 (Observed value of x5 in DUT register is 1)
-current_pc = 18 (current pc of the instruction in write back stage : Yet to be committed)
-old_pc = 14 (PC value of instruction which got committed)
+
+                          timestamp = 14500 units
+                          cycle_count = 10 (you can use timestamp and wiscv_tb.cycle_count variables to arrive at the failure point in timestamp)
+                          cycle_count is a free running 32 bit counter increments by 1 on every clock cycle posedge. 
+                          index = 5 (Register Index is 5 . That is x5 has incorrect value) 
+                          Expected = 0 (Expected value of x5 as per TB simulator is 0)
+                          Actual = 1 (Observed value of x5 in DUT register is 1)
+                          current_pc = 18 (current pc of the instruction in write back stage : Yet to be committed)
+                          old_pc = 14 (PC value of instruction which got committed)
 
 
+Waves Dump :
+           add "WAVES=1" to the make command used to dump waves in ${RUN_DIR}. "vsim.wlf" is the name of waveform created.
+          
+          Command to open Waves : 
+                                
+                                vsim vsim.wlf&
+          
  
          
  
