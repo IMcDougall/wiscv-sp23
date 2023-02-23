@@ -1,0 +1,75 @@
+.global _start
+_start:
+      addi x1,x0,0x678
+      lui x1,0x12345
+      addi x31,x0,0x1
+      sll x2,x1,x0
+      addi x30,x0,0x2
+      sll x3,x1,x31
+      addi x29,x0,0x3
+      sll x4,x1,x30
+      addi x28,x0,0x4
+      sll x5,x1,x29
+      addi x27,x0,0x5
+      sll x6,x1,x28
+      addi x26,x0,0x6
+      sll x7,x1,x27
+      addi x25,x0,0x7
+      sll x8,x1,x26
+      addi x24,x0,0x8
+      sll x9,x1,x25
+      addi x23,x0,0x9
+      sll x10,x1,x24
+      addi x22,x0,0xa
+      sll x11,x1,x23
+      addi x21,x0,0xb
+      sll x12,x1,x22
+      addi x20,x0,0xc
+      sll x13,x1,x21
+      addi x19,x0,0xd
+      sll x14,x1,x20
+      addi x18,x0,0xe
+      sll x15,x1,x19
+      addi x17,x0,0xf
+      sll x16,x1,x18
+      addi x16,x0,0x10
+      sll x17,x1,x17
+      addi x15,x0,0x11
+      sll x18,x1,x16
+      addi x14,x0,0x12
+      sll x19,x1,x15
+      addi x13,x0,0x13
+      sll x20,x1,x14
+      addi x12,x0,0x14
+      sll x21,x1,x13
+      addi x11,x0,0x15
+      sll x22,x1,x12
+      addi x10,x0,0x16
+      sll x23,x1,x11
+      addi x9,x0,0x17
+      sll x24,x1,x10
+      addi x8,x0,0x18
+      sll x25,x1,x9
+      addi x7,x0,0x19
+      sll x26,x1,x8
+      addi x6,x0,0x1a
+      sll x27,x1,x7
+      addi x5,x0,0x1b
+      sll x28,x1,x6
+      addi x4,x0,0x1c
+      sll x29,x1,x5
+      addi x3,x0,0x1d
+      sll x30,x1,x4
+      addi x2,x0,0x1e
+      sll x31,x1,x3
+      addi x31,x0,0xf
+      sll x31,x1,x31
+      sll x31,x1,x2
+      addi x31,x0,0x4
+      sll x31,x1,x31
+      j exit
+
+exit: 
+    li a7,93
+    ecall
+
