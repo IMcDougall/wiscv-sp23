@@ -15,9 +15,12 @@ Each of the above design folders has the following hierarchy.
   
   
 Environment :
-          Add RISCV toolchain to your PATH variable. Add the following command in .bashrc/.bashrc.local
+          Add RISCV toolchain, Modelsim to your PATH variable. Add the following commands in .bashrc/.bashrc.local
           
                     export PATH=$PATH:/p/vertical/projects/552RISCV/riscv_toolchain_install/bin
+                    export MGC_HOME=/s/mentor-2018/@sys/V10.0BSXE/MGC_HOME.ixl
+                    export MGLS_LICENSE_FILE=/s/mentor-2018/etc/cust/mgls/mgc.licenses
+                    export PATH=$PATH:/s/mentor-2018/@sys/bin:/s/mentor-2018/@sys/bin.pclinux:/s/mentor-2018/@sys/V10.0BSXE/MGC_HOME.ixl/bin:/s/mentor-2018/@sys/modelsim_dlx/bin
 
 TB Environment is located in ./tb directory. To run any testcase.
 
