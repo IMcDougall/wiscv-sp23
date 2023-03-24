@@ -50,7 +50,7 @@ clean :
 
 
 create_dir :
-	@mkdir -p $(RUN_DIR); cp $(SCRIPTS_PATH)/* $(RUN_DIR)/; 
+	@mkdir -p $(RUN_DIR); cp $(SCRIPTS_PATH)/* $(RUN_DIR)/; chmod u+x $(RUN_DIR)/*.sh; 
 
 c_compile :
 	@cp $(TESTS_PATH)/*/$(PROG).* $(RUN_DIR)/;
